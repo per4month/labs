@@ -318,3 +318,19 @@ bool Test::test2_unsigned_long() {
 		return false;
 	}
 }
+
+bool Test::test_unsigned_long_overload() {
+	unsigned long expected = 0;
+	BigInt obj1("4294967345433235");
+	unsigned long actual = obj1;
+	cout << "Expected: " << expected << " Actual: " << actual << " " << endl;
+	if (expected == actual) {
+		suc++;
+		return true;
+	}
+	else {
+		fail++;
+		return false;
+	}
+}
+

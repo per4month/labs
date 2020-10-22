@@ -64,8 +64,12 @@ int main()
 	cout << "Test 19 (unsigned long again)" << endl;
 	cout << test.test2_unsigned_long() << endl;
 	cout << "---------------------------------" << endl;
+	cout << "Test 20 (unsigned long overload)" << endl;
+	cout << test.test_unsigned_long_overload() << endl;
+	cout << "---------------------------------" << endl;
 	cout << "Successful tests: " << test.suc << endl;
 	cout << "Failed tests: " << test.fail << endl;
+	
 	cin.get();
 	cin.get();
 }

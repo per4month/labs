@@ -138,6 +138,13 @@ public:
 	//return - true или false
 	bool test2_unsigned_long();
 	
+	//bool Test::test_unsigned_long_overload()
+	//Тест перегрузки приведения к типу unsigned long, переполнение 
+	//args:
+	//- нет входных параметров -
+	//return - true или false
+	bool test_unsigned_long_overload();
+
 	//количество удачных тестов
 	int suc;
 

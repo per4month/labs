@@ -916,8 +916,11 @@ BigInt::operator unsigned long() {
 	int currentLength = this->length;
 	unsigned long number = 0;
 	for (int i = 0; i < currentLength; i++) {
+		if ((ULONG_MAX - this->longNumber[i])/10 < number) {
+			std::cerr << "Overload unsigned int!" << std::endl; 
+			return 0;
+		}
 		number = number * 10 + this->longNumber[i];
 	}
 	return number;
 }
-
