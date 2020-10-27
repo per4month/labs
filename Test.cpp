@@ -322,15 +322,13 @@ bool Test::test2_unsigned_long() {
 bool Test::test_unsigned_long_overload() {
 	unsigned long expected = 0;
 	BigInt obj1("4294967345433235");
-	unsigned long actual = obj1;
-	cout << "Expected: " << expected << " Actual: " << actual << " " << endl;
-	if (expected == actual) {
-		suc++;
+	try {
+		unsigned long actual_error = obj1;
+	}
+	catch (std::overflow_error &err) {
+		std::cout << err.what() << endl;
 		return true;
 	}
-	else {
-		fail++;
-		return false;
-	}
+	return false;
 }
 
