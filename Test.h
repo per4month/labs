@@ -124,8 +124,18 @@ public:
 	//return - true или false
 	bool test_pop_back_return();
 
+	//bool Test :: test_pop_front_return_NULL()
+	//Тест удаления элемента с начала дека (дек пустой)
+	//args:
+	//- нет входных параметров -
+	//return - true или false
 	bool test_pop_front_return_NULL();
 
+	//bool Test :: test_pop_back_return_NULL()
+	//Тест удаления элемента с конца дека (дек пустой)
+	//args:
+	//- нет входных параметров -
+	//return - true или false
 	bool test_pop_back_return_NULL();
 
 	//количество удачных тестов
