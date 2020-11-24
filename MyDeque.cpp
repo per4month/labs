@@ -21,7 +21,8 @@ void MyDeque::push_front(BigInt* obj) {
 	head = elem;
 }
 
-void MyDeque::pop_front() {
+BigInt* MyDeque::pop_front() {
+	BigInt* tmp = NULL;
 	try {
 		if (head == NULL) {
 			throw exception("Error! No elements in deque");
@@ -29,23 +30,25 @@ void MyDeque::pop_front() {
 	}
 	catch (exception& ex) {
 		cout << ex.what() << endl;
-		return;
+		return NULL;
 	}
 	if (head->next == NULL) {
-		delete head->data;
+		tmp = head->data;
 		delete head;
 		head = NULL;
 		tail = NULL;
-		return;
+		return tmp;
 	}
 	Elem* cur = head;
 	head = head->next;
 	head->prev = NULL;
-	delete cur->data;
+	tmp = cur->data;
 	delete cur;
+	return tmp;
 }
 
-void MyDeque::pop_back() {
+BigInt* MyDeque::pop_back() {
+	BigInt* tmp;
 	try {
 		if (tail == NULL) {
 			throw exception("Error! No elements in deque");
@@ -53,20 +56,21 @@ void MyDeque::pop_back() {
 	}
 	catch (exception& ex) {
 		cout << ex.what() << endl;
-		return;
+		return NULL;
 	}
 	if (tail->prev == NULL) {
-		delete tail->data;
+		tmp = tail->data;
 		delete tail;
 		head = NULL;
 		tail = NULL;
-		return;
+		return tmp;
 	}
 	Elem* cur = tail;
+	tmp = cur->data;
 	tail = tail->prev;
 	tail->next = NULL;
-	delete cur->data;
 	delete cur;
+	return tmp;
 }
 
 bool MyDeque::find() {

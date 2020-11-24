@@ -121,6 +121,7 @@ void BigFloat::setFloatArray() {
 }
 
 char* BigFloat::toString() {
+	
 	int length = this->getLength() + lengthFloat + 1;
 	char* str = new char[length + 1];
 	for (int i = 0; i < this->getLength(); i++) {

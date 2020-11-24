@@ -65,6 +65,7 @@ SignedBigFloat::~SignedBigFloat() {
 }
 
 char* SignedBigFloat::toString() {
+	
 	int length = 0;
 	int n = 0;
 	if (positive) {

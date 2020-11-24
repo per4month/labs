@@ -54,6 +54,18 @@ int main()
 	cout << "Test 15 (func find() - deque with NULL element)" << endl;
 	cout << test.test_find_with_NULL() << endl;
 	cout << "---------------------------------" << endl;
+	cout << "Test 16 (pop front return)" << endl;
+	cout << test.test_pop_front_return() << endl;
+	cout << "---------------------------------" << endl;
+	cout << "Test 17 (pop back return)" << endl;
+	cout << test.test_pop_back_return() << endl;
+	cout << "---------------------------------" << endl;
+	cout << "Test 18 (pop front return NULL)" << endl;
+	cout << test.test_pop_front_return_NULL() << endl;
+	cout << "---------------------------------" << endl;
+	cout << "Test 19 (pop back return NULL)" << endl;
+	cout << test.test_pop_back_return_NULL() << endl;
+	cout << "---------------------------------" << endl;
 	cout << "Successful tests: " << test.suc << endl;
 	cout << "Failed tests: " << test.fail << endl;
 	cin.get();

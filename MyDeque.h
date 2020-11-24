@@ -22,19 +22,19 @@ public:
 	//- добавляет элемент в начало дека -
 	void push_front(BigInt* obj);
 
-	//void MyDeque::pop_front()
+	//BigInt* MyDeque::pop_front()
 	//Функция удаления элемента с начала дека
 	//args:
 	//- нет входных параметров - 
-	//- удаляет элемент с начала дека -
-	void pop_front();
+	//- возвращает удаленный элемент с начала дека -
+	BigInt* pop_front();
 
-	//void MyDeque::pop_back()
+	//BigInt* MyDeque::pop_back()
 	//Функция удаления элемента с конца дека
 	//args:
 	//- нет входных параметров - 
-	//- удаляет элемент с конца дека -
-	void pop_back();
+	//- возвращает удаленный элемент с конца дека -
+	BigInt* pop_back();
 
 	//bool MyDeque::find()
 	//Функция поиска не NULL элементов

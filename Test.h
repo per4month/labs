@@ -110,6 +110,24 @@ public:
 	//return - true или false
 	bool test_find_with_NULL();
 
+	//bool Test :: test_pop_front_return()
+	//“ест удалени€ элемента с начала дека (возвращаемое значение)
+	//args:
+	//- нет входных параметров -
+	//return - true или false
+	bool test_pop_front_return();
+
+	//bool Test :: test_pop_back_return()
+	//“ест удалени€ элемента с конца дека (возвращаемое значение)
+	//args:
+	//- нет входных параметров -
+	//return - true или false
+	bool test_pop_back_return();
+
+	bool test_pop_front_return_NULL();
+
+	bool test_pop_back_return_NULL();
+
 	//количество удачных тестов
 	int suc;
 

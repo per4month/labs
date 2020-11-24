@@ -22,7 +22,7 @@ bool Test::test_polymorph_toString() {
 	objects[2] = new SignedBigFloat('-',"0","7889787");
 	objects[3] = new BigFloat("12342", "788974");
 	objects[4] = new BigInt("655757353");
-	char* actual[5];
+	const char* actual[5];
 	int count = 0;
 	for (int i = 0; i < 5; i++) {
 		actual[i] = objects[i]->toString();
@@ -393,6 +393,112 @@ bool Test::test_find_with_NULL() {
 	cout << "Expected: " << expected << endl;
 	cout << "Actual: " << actual << " " << endl;
 	if (expected == actual) {
+		suc++;
+		return true;
+	}
+	else {
+		fail++;
+		return false;
+	}
+}
+
+bool Test::test_pop_front_return() {
+	const char* expected = "-0.02131";
+	BigInt* A = new BigInt("112122");
+	BigInt* B = new BigInt("2312141");
+	BigInt* C = new BigFloat("123242", "2312141");
+	BigInt* D = new BigFloat("0", "0");
+	BigInt* E = new SignedBigFloat('-', "0", "02131");
+	MyDeque objects;
+	objects.push_front(A);
+	objects.push_front(B);
+	objects.push_front(C);
+	objects.push_front(D);
+	objects.push_front(E);
+	BigInt* result = objects.pop_front();
+	const char* actual = result->toString();
+	cout << "Expected: " << expected << endl;
+	cout << "Actual: " << actual << " " << endl;
+	if (strcmp(actual, expected) == 0){
+		suc++;
+		return true;
+	}
+	else {
+		fail++;
+		return false;
+	}
+}
+
+bool Test::test_pop_back_return() {
+	const char* expected = "112122";
+	BigInt* A = new BigInt("112122");
+	BigInt* B = new BigInt("2312141");
+	BigInt* C = new BigFloat("123242", "2312141");
+	BigInt* D = new BigFloat("0", "0");
+	BigInt* E = new SignedBigFloat('-', "0", "02131");
+	MyDeque objects;
+	objects.push_front(A);
+	objects.push_front(B);
+	objects.push_front(C);
+	objects.push_front(D);
+	objects.push_front(E);
+	BigInt* result = objects.pop_back();
+	const char* actual = result->toString();
+	cout << "Expected: " << expected << endl;
+	cout << "Actual: " << actual << " " << endl;
+	if (strcmp(actual, expected) == 0) {
+		suc++;
+		return true;
+	}
+	else {
+		fail++;
+		return false;
+	}
+}
+
+bool Test::test_pop_front_return_NULL() {
+	bool expected = true;
+	bool actual =  false;
+	MyDeque objects;
+	BigInt* result = objects.pop_front();
+	try {
+		if (result == NULL) {
+			throw exception("Error! Object doesn't exist.");
+		}
+	}
+	catch (exception &ex) {
+		cout << ex.what() << endl;
+		actual = true;
+	}
+	cout << "Expected: " << expected << endl;
+	cout << "Actual: " << actual << " " << endl;
+	if (actual = expected) {
+		suc++;
+		return true;
+	}
+	else {
+		fail++;
+		return false;
+	}
+}
+
+bool Test::test_pop_back_return_NULL() {
+	bool expected = true;
+	bool actual = false;
+	MyDeque objects;
+	BigInt* result = objects.pop_front();
+	try {
+		if (result == NULL) {
+			throw exception("Error! Object doesn't exist.");
+		}
+	}
+	catch (exception& ex) {
+		cout << ex.what() << endl;
+		actual = true;
+	}
+	cout << "Expected: " << expected << endl;
+	cout << "Actual: " << actual << " " << endl;
+	if (actual = expected) {
 		suc++;
 		return true;
 	}
